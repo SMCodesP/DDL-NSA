@@ -8,7 +8,7 @@ const sizeMenu = 50;
 export const Container = styled.nav`
   background: ${colorMenu};
   width: ${sizeMenu}px;
-  height: 100vh;
+  height: ${props => props.height}px;
 `;
 
 export const List = styled.ul`

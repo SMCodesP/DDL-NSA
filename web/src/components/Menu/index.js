@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FiHome,
   FiAlignLeft,
@@ -15,6 +15,7 @@ import {
 import { Container, List, Item, Expand } from './styles';
 
 export default function Menu({ selected }) {
+  const [height, setHeight] = useState(0);
   const functions = {
     dashboard: React.createRef()
   };
@@ -22,9 +23,10 @@ export default function Menu({ selected }) {
     if(!functions[selected]) return;
     functions[selected].current.style.filter = 'brightness(90%)';
     functions[selected].current.style.borderRight = '2px solid #333';
+    setHeight(document.body.scrollHeight);
   }, [functions, selected]);
   return (
-    <Container>
+    <Container height={height}>
       <Expand>
         <FiAlignLeft size={35} color='#333333' />
       </Expand>
