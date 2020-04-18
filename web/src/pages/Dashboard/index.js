@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import {} from './styles.js';
+import Menu from '../../components/Menu';
+import title from '../../utils/setTitle';
 
-export default function Main() {
+export default function Dashboard() {
+  useEffect(() => {
+    title('Dashboard', true);
+  }, []);
   return (
-    <h1>Main</h1>
+    <>
+      <Menu selected='dashboard' />
+    </>
   );
 }
