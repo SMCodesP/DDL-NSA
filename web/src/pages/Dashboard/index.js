@@ -5,7 +5,11 @@ import title from '../../utils/setTitle';
 
 export default function Dashboard() {
   useEffect(() => {
-    title('Dashboard', true);
+    const oldTitle = title('Dashboard', true);
+
+    return () => {
+      title(oldTitle, false);
+    }
   }, []);
   return (
     <>
