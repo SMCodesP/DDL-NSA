@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import Menu from '../../components/Menu';
 import ListItems from '../../components/ListItems';
 import title from '../../utils/setTitle';
-import Item from "../../components/Item";
+import Item from '../../components/Item';
+import Graph from '../../components/Graph';
 
 import { Container, ContainerList, Name, User, List, LItem } from './styles';
 
@@ -38,6 +39,9 @@ export default function Dashboard() {
                 Grupo da Divisão: Grupo B
               </LItem>
             </List>
+          </Item>
+          <Item>
+            <Graph />
           </Item>
         </ListItems>
         <ListItems title='Notícias' breakt={2}>
