@@ -34,4 +34,5 @@ export const LItem = styled.li`
   color: #222;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
+  font-weight: ${props => (!props.weight) ? '400' : '900'};
 `;

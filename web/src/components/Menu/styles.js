@@ -7,20 +7,25 @@ const sizeMenu = 50;
 
 export const Container = styled.nav`
   background: ${colorMenu};
-  width: ${sizeMenu}px;
+  width: ${props => (props.expanded) ? 200 : sizeMenu}px;
   height: ${props => props.height}px;
+  transition: .2s width;
+`;
+
+
+export const ContainerExpanded = styled(Container)`
+  width: 90px;
 `;
 
 export const List = styled.ul`
-  width: ${sizeMenu}px;
+  width: 100%;
   height: auto;
 `;
 
 export const Item = styled.li`
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: ${sizeMenu}px;
+  width: 100%;
   height: ${sizeMenu}px;
   cursor: pointer;
   transition: .2s filter;
@@ -30,13 +35,25 @@ export const Item = styled.li`
     border-right: 2px solid #333;
     filter: brightness(90%);
   }
+
+  & svg {
+    margin-left: ${(sizeMenu-25)/2}px;
+  }
+`;
+
+export const Text = styled.label`
+  display: ${props => (props.expanded) ? 'block' : 'none'};
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fafafa;
+  cursor: pointer;
 `;
 
 export const Expand = styled.div`
-  width: ${sizeMenu}px;
+  width: 100%;
   height: ${sizeMenu}px;
   transition: .4s filter;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +64,7 @@ export const Expand = styled.div`
   }
 
   & svg:hover {
+    cursor: pointer;
     filter: brightness(80%);
   }
 `;

@@ -23,7 +23,7 @@ export default function Dashboard() {
             <User src={avatar} alt='avatar for user' />
             <Name>Samuel Pereira da Silva</Name>
             <List>
-              <LItem>
+              <LItem weight={600}>
                 RM: 27017
               </LItem>
               <br/>
