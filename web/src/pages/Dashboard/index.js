@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 import Menu from '../../components/Menu';
 import ListItems from '../../components/ListItems';
-import title from '../../utils/setTitle';
 import Item from '../../components/Item';
+import title from '../../utils/setTitle';
 import Graph from '../../components/Graph';
 
 import { Container, ContainerList, Name, User, List, LItem } from './styles';
@@ -12,8 +12,11 @@ import avatar from '../../images/user.png';
 
 export default function Dashboard() {
   useEffect(() => {
-    const oldTitle = title('Dashboard', true);
-    return () => title(oldTitle, false);
+    const oldTitle = title('Dashboard', false);
+
+    return () => {
+      title(oldTitle, false);
+    }
   }, []);
   return (
     <Container>

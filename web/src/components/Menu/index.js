@@ -11,7 +11,9 @@ import {
   FiFolder,
   FiEdit2,
   FiAlignRight,
+  FiLogOut
 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import { Container, List, Item, Expand, Text } from './styles';
 
@@ -19,7 +21,8 @@ export default function Menu({ selected }) {
   const [height, setHeight] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const functions = {
-    dashboard: React.createRef()
+    dashboard: React.createRef(),
+    downloads: React.createRef(),
   };
   useEffect(() => {
     if(!functions[selected]) return;
@@ -37,14 +40,18 @@ export default function Menu({ selected }) {
         ) }
       </Expand>
       <List>
-        <Item ref={functions[selected]}>
-          <FiHome size={25} color='#fafafa' />
-          <Text expanded={expanded}>Início</Text>
-        </Item>
-        <Item>
-          <FiDownload size={25} color='#fafafa' />
-          <Text expanded={expanded}>Baixar</Text>
-        </Item>
+        <Link to='dashboard'>
+          <Item ref={functions['dashboard']}>
+            <FiHome size={25} color='#fafafa' />
+            <Text expanded={expanded}>Início</Text>
+          </Item>
+        </Link>
+        <Link to='downloads'>
+          <Item ref={functions['downloads']}>
+            <FiDownload size={25} color='#fafafa' />
+            <Text expanded={expanded}>Baixar</Text>
+          </Item>
+        </Link>
         <Item>
           <FiBook size={25} color='#fafafa' />
           <Text expanded={expanded}>Diário</Text>
@@ -73,6 +80,12 @@ export default function Menu({ selected }) {
           <FiEdit2 size={25} color='#fafafa' />
           <Text expanded={expanded}>Rematrícula</Text>
         </Item>
+        <Link to=''>
+          <Item>
+            <FiLogOut size={25} color='#333333' />
+            <Text expanded={expanded}>Sair</Text>
+          </Item>
+        </Link>
       </List>
     </Container>
   );
