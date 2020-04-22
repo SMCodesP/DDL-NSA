@@ -25,10 +25,10 @@ export default function Dashboard() {
         <ListItems title='Informações' breakt={2}>
           <Item>
             <User src={avatar} alt='avatar for user' />
-            <Name>Samuel Pereira da Silva</Name>
+            <Name>Usuário de teste</Name>
             <List>
               <LItem weight={600}>
-                RM: 27017
+                RM: 0001
               </LItem>
               <br/>
               <br/>

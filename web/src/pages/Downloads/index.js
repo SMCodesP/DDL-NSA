@@ -9,9 +9,9 @@ import title from '../../utils/setTitle';
 
 import { Container, ContainerList, Text, Title } from './styles';
 
-export default function Dashboard() {
+export default function Downloads() {
   useEffect(() => {
-    const oldTitle = title('Dashboard', false);
+    const oldTitle = title('Downloads', false);
 
     return () => {
       title(oldTitle, false);
@@ -23,11 +23,11 @@ export default function Dashboard() {
       <ContainerList>
         <ListItems title='Arquivos disponíveis' breakt={2}>
           <Item>
-		<FiFolder color='#333333' size={75} />
-		<Title>PWI</Title>
-		<Text>
-			Baixe sua primeira aula prática aqui, clique <Link to='downloads#'>aqui</Link>
-		</Text>
+            <FiFolder color='#333333' size={75} />
+            <Title>PWI</Title>
+            <Text>
+              Baixe sua primeira aula prática aqui, clique <Link to='downloads#'>aqui</Link>
+            </Text>
           </Item>
         </ListItems>
       </ContainerList>

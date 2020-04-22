@@ -40,6 +40,8 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(rm, cod, join, password);
+    if(rm !== '0001'  || cod !== '054' || password !== 'teste123') return alert('Usuário inválido.');
     history.push('dashboard');
   }
 
@@ -85,7 +87,7 @@ export default function Login() {
                 <InputForm
                   ref={inputRefCod}
                   type='number'
-                  name='rm'
+                  name='cod'
                   placeholder='ETEC'
                   value={cod}
                   onChange={(e) => changeInput(e, setCode)}

@@ -23,6 +23,7 @@ export default function Menu({ selected }) {
   const functions = {
     dashboard: React.createRef(),
     downloads: React.createRef(),
+    daily: React.createRef(),
   };
   useEffect(() => {
     if(!functions[selected]) return;
@@ -52,10 +53,12 @@ export default function Menu({ selected }) {
             <Text expanded={expanded}>Baixar</Text>
           </Item>
         </Link>
-        <Item>
-          <FiBook size={25} color='#fafafa' />
-          <Text expanded={expanded}>Diário</Text>
-        </Item>
+        <Link to='daily'>
+          <Item ref={functions['daily']}>
+            <FiBook size={25} color='#fafafa' />
+            <Text expanded={expanded}>Diário</Text>
+          </Item>
+        </Link>
         <Item>
           <FiSidebar size={25} color='#fafafa' />
           <Text expanded={expanded}>Boletim</Text>
