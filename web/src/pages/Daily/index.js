@@ -1,11 +1,11 @@
 import React from 'react';
-import FullCalendar from 'rc-calendar/src/FullCalendar';
 
 import { Container, ListContext } from './styles';
 
 import Menu from '../../components/Menu/';
 import ListItems  from '../../components/ListItems/';
 import Item from '../../components/Item/';
+import Calendar from  '../../components/Calendar';
 
 export default function Daily() {
   return (
@@ -14,7 +14,7 @@ export default function Daily() {
       <ListContext>
         <ListItems title='Horário' breakt={1}>
           <Item>
-            <FullCalendar />
+						<Calendar />
           </Item>
         </ListItems>
       </ListContext>
