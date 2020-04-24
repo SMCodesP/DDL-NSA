@@ -6,10 +6,25 @@ export const Container = styled.div`
 	padding: 20px;
 `;
 
+export const Header = styled.header`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: -12.5px;
+	margin-bottom: 5px;
+
+	& > svg {
+		cursor: pointer;
+		transition: .2s filter;
+	}
+
+	& > svg:hover {
+		filter: brightness(60%);
+	}
+`;
+
 export const Title = styled.h1`
 	text-align: center;
-	margin-top: -5px;
-	margin-bottom: 5px;
 	font-family: 'Roboto', sans-serif;
 `;
 
@@ -20,7 +35,11 @@ export const Month = styled.ul`
 `;
 
 export const Day = styled.li`
-	color: ${props => props.selected ? '#e02041' : '#333'};
+	color: ${props => {
+		if(props.selected) return '#e02041';
+		if(props.off) return '#999';
+		return '#333';
+	}};
 	cursor: ${props => props.selected ? 'normal' : 'pointer'};
 	text-align: center;
 	border-radius: 2px;
@@ -31,4 +50,14 @@ export const Day = styled.li`
 		border: 1px solid ${props => props.selected ? 'red' : '#444'};
 		color: ${props => props.selected ? '#e02041' : 'lightblue'};
 	}
+`;
+
+export const Names = styled.ul`
+	width: 100%;
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+`;
+
+export const Name = styled.li`
 `;
