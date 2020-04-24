@@ -8,7 +8,6 @@ export default function Calendar() {
 	const [date, setDate] = useState(new Date());
 	const [year, setYear] = useState(date.getFullYear());
 	const [month, setMonth] = useState(date.getMonth());
-	const [day, setDay] = useState(date.getDate());
 	const [dates, setDates] = useState([]);
 	const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 
@@ -27,12 +26,11 @@ export default function Calendar() {
 
 	useEffect(() => {
 		setDate(new Date(year, month, 1));
-	}, []);
+	}, [year, month]);
 
 	useEffect(() => {
 		setYear(date.getFullYear());
 		setMonth(date.getMonth());
-		setDay(date.getDate());
 	}, [date]);
 
 	useEffect(() => {
